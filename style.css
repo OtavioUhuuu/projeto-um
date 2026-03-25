@@ -1,90 +1,60 @@
-/* Configuração Geral */
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
+
+:root {
+  --cor-de-fundo: #1e1e1e;
+  --verde: #6fff57;
+  --branco: #ffffff;
+  --botao-ativo: #3a375e;
+  --botao-inativo: rgba(58, 55, 94, 0.5);
+  --texto-fundo: rgba(58, 55, 94, 0.3);
+}
+
 body {
-    background-color: #f0f2f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: var(--cor-de-fundo);
+  color: var(--branco);
+  font-family: "Chakra Petch", sans-serif;
 }
 
-/* O Card */
-.card {
-    background-color: white;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    overflow: hidden;
-    padding-bottom: 25px;
+.conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Faixa de cor no topo */
-.banner {
-    height: 80px;
-    background: linear-gradient(45deg, #6e8efb, #a777e3);
+.titulo-principal {
+  text-align: left;
+  width: 100%;
+  font-size: 32px;
 }
 
-/* Foto de Perfil */
-.profile-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 5px solid white;
-    margin-top: -45px;
+.titulo-principal span {
+  color: var(--verde);
 }
 
-/* Textos */
-h1 {
-    font-size: 22px;
-    margin: 10px 0 5px 0;
-    color: #333;
+.botao {
+  font-family: "Crakra Petch", sans-serif;
+  background-color: var(--botao-inativo);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  font-size: 18px;
+  align-items: center;
+  width: 100%;
+  border-bottom: 4px solid var(--botao-ativo);
+  border-left: 2px solid var(--botao-ativo);
+  border-right: 2px solid var(--botao-ativo);
+  border-top: none;
 }
 
-.title {
-    color: #6e8efb;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 15px;
+.botao:first-child {
+  border-radius: 40px 40px 0 0;
 }
 
-.description {
-    padding: 0 20px;
-    font-size: 13px;
-    color: #666;
-    line-height: 1.5;
-}
-
-/* Botão Interativo */
-button {
-    margin-top: 20px;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 20px;
-    background-color: #6e8efb;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #a777e3;
-    transform: scale(1.05);
-}
-  /* Estilos para telas maiores (Desktop/Tablet) */
-@media screen and (min-width: 768px) {
-    .botoes {
-        display: flex;
-    }
-
-    /* Ajusta o primeiro botão: arredonda apenas o canto superior esquerdo */
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
-    }
-
-    /* Ajusta o último botão: arredonda apenas o canto superior direito */
-    .botao:last-child {
-        border-radius: 0 40px 0 0;
-    }
+.botoes {
+  display: block;
 }
