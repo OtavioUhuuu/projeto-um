@@ -36,7 +36,8 @@ body {
 }
 
 .botao {
-  font-family: "Crakra Petch", sans-serif;
+  /* Corrigido: era "Crakra", o certo é "Chakra" */
+  font-family: "Chakra Petch", sans-serif; 
   background-color: var(--botao-inativo);
   color: var(--branco);
   display: flex;
@@ -49,6 +50,8 @@ body {
   border-left: 2px solid var(--botao-ativo);
   border-right: 2px solid var(--botao-ativo);
   border-top: none;
+  cursor: pointer; /* Adicionado para mostrar que é clicável */
+  transition: 0.3s; /* Adicionado para suavizar a troca de cores */
 }
 
 .botao:first-child {
@@ -57,16 +60,62 @@ body {
 
 .botoes {
   display: block;
+  width: 100%;
 }
-@media screen and (min-width: 768px) {
-}
+
+/* Agrupando as Media Queries para o código ficar mais limpo */
 @media screen and (min-width: 768px) {
   .botoes {
     display: flex;
   }
-}
-@media screen and (min-width: 768px) {
+
   .botao:first-child {
     border-radius: 40px 0 0 0;
-     }
   }
+  
+  /* Arredondar o último botão na direita no desktop */
+  .botao:last-child {
+    border-radius: 0 40px 0 0;
+  }
+}
+
+.abas-textos {
+  background-color: var(--texto-fundo);
+  padding: 40px;
+  border-radius: 0 0 40px 40px;
+  width: 100%; /* Garante que preencha o espaço */
+}
+
+/* LÓGICA DE ATIVAÇÃO */
+.botao.ativo {
+  background-color: var(--botao-ativo);
+  border-bottom: 4px solid var(--verde);
+}
+
+.aba-conteudo {
+  display: none; /* Esconde todos por padrão */
+}
+
+.aba-conteudo.ativo {
+  display: block; /* Mostra apenas o que tiver a classe ativo */
+}
+
+/* ESTILIZAÇÃO DO TEXTO */
+.aba-conteudo-titulo-principal {
+  font-size: 28px;
+  text-align: center;
+}
+
+.aba-conteudo-titulo-secundario {
+  text-align: center;
+  color: var(--verde);
+  text-transform: uppercase;
+}
+
+/* Estilo para o contador */
+.contador {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: bold;
+}
