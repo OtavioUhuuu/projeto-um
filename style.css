@@ -72,3 +72,19 @@ button:hover {
     background-color: #a777e3;
     transform: scale(1.05);
 }
+  /* Estilos para telas maiores (Desktop/Tablet) */
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
+
+    /* Ajusta o primeiro botão: arredonda apenas o canto superior esquerdo */
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
+
+    /* Ajusta o último botão: arredonda apenas o canto superior direito */
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
+}
