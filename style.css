@@ -9,10 +9,13 @@
   --texto-fundo: rgba(58, 55, 94, 0.3);
 }
 
+/* Configurações Gerais */
 body {
   background-color: var(--cor-de-fundo);
   color: var(--branco);
   font-family: "Chakra Petch", sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
 .conteudo-principal {
@@ -35,72 +38,58 @@ body {
   color: var(--verde);
 }
 
+/* Estrutura dos Botões */
+.botoes {
+  display: block;
+  width: 100%;
+}
+
 .botao {
-  /* Corrigido: era "Crakra", o certo é "Chakra" */
   font-family: "Chakra Petch", sans-serif; 
   background-color: var(--botao-inativo);
   color: var(--branco);
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1em;
   font-size: 18px;
-  align-items: center;
   width: 100%;
   border-bottom: 4px solid var(--botao-ativo);
   border-left: 2px solid var(--botao-ativo);
   border-right: 2px solid var(--botao-ativo);
   border-top: none;
-  cursor: pointer; /* Adicionado para mostrar que é clicável */
-  transition: 0.3s; /* Adicionado para suavizar a troca de cores */
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .botao:first-child {
   border-radius: 40px 40px 0 0;
 }
 
-.botoes {
-  display: block;
-  width: 100%;
-}
-
-/* Agrupando as Media Queries para o código ficar mais limpo */
-@media screen and (min-width: 768px) {
-  .botoes {
-    display: flex;
-  }
-
-  .botao:first-child {
-    border-radius: 40px 0 0 0;
-  }
-  
-  /* Arredondar o último botão na direita no desktop */
-  .botao:last-child {
-    border-radius: 0 40px 0 0;
-  }
-}
-
-.abas-textos {
-  background-color: var(--texto-fundo);
-  padding: 40px;
-  border-radius: 0 0 40px 40px;
-  width: 100%; /* Garante que preencha o espaço */
-}
-
-/* LÓGICA DE ATIVAÇÃO */
+/* Lógica de Ativação do Botão */
 .botao.ativo {
   background-color: var(--botao-ativo);
   border-bottom: 4px solid var(--verde);
 }
 
+/* Conteúdo das Abas */
+.abas-textos {
+  background-color: var(--texto-fundo);
+  padding: 40px;
+  border-radius: 0 0 40px 40px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
 .aba-conteudo {
-  display: none; /* Esconde todos por padrão */
+  display: none; /* Escondido por padrão */
 }
 
 .aba-conteudo.ativo {
-  display: block; /* Mostra apenas o que tiver a classe ativo */
+  display: block; /* Mostra quando ativo via JS */
 }
 
-/* ESTILIZAÇÃO DO TEXTO */
+/* Estilização Interna das Abas */
 .aba-conteudo-titulo-principal {
   font-size: 28px;
   text-align: center;
@@ -112,10 +101,28 @@ body {
   text-transform: uppercase;
 }
 
-/* Estilo para o contador */
 .contador {
   text-align: center;
   font-size: 24px;
   margin-top: 10px;
   font-weight: bold;
+}
+
+/* Responsividade (Desktop) */
+@media screen and (min-width: 768px) {
+  .botoes {
+    display: flex;
+  }
+
+  .botao:first-child {
+    border-radius: 40px 0 0 0;
+  }
+  
+  .botao:last-child {
+    border-radius: 0 40px 0 0;
+  }
+
+  .botao {
+    border-top: 2px solid var(--botao-ativo);
+  }
 }
